@@ -20,6 +20,11 @@ var schedule = [
   { time: "5 PM", event: "" },
 ];
 
+//check localStorage
+var dailyEvents = JSON.parse(localStorage.getItem("workDay"));
+if (dailyEvents) {
+    schedule = dailyEvents;
+}
 
 //create rows
 schedule.forEach(function(timeBlock, index) {
@@ -46,4 +51,19 @@ function timeColor(time) {
 		return "present";
 	}
 }
+
+
+/* Save Events */
+$(".saveBtn").on("click", function() {
+	var blockID = parseInt(
+		$(this).closest(".timeblock").attr("id")
+	);
+	var userEntry = $.trim(
+		$(this).parent().siblings("textarea").val()
+	);
+	schedule[blockID].event = userEntry;
+
+	/* Set local storage */
+	localStorage.setItem("workDay", JSON.stringify(schedule));
+});
 
