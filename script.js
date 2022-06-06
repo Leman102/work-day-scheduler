@@ -1,62 +1,49 @@
-var schedule = {};
+$(function () {});
+  
+var today = moment().format("dddd, MMMM Do");
 
-//Create current day on the header
-var date = $(".calendar-display").text();
-var today = moment();
-var currentDate = $(".calendar-display").replaceWith(today.format("dddd, MMMM Do YYYY"));
+var now = moment().format("H A");
 
-// Create/edit task on the task-content field 
-$(".task-content").on("dblclick", function() {
-    
-    var text = $(this).text().trim();
-    console.log(text)
+/* Current Day */
+$("#currentDay").text(today);
 
-    var textInput = $("<textarea>").addClass("task-edit").val(text);
-    $(this).replaceWith(textInput);
+//create schedule based on the work hours 9AM-5PM
+var schedule = [
+  { time: "9 AM", event: "" },
+  { time: "10 AM", event: "" },
+  { time: "11 AM", event: "" },
+  { time: "12 PM", event: "" },
+  { time: "1 PM", event: "" },
+  { time: "2 PM", event: "" },
+  { time: "3 PM", event: "" },
+  { time: "4 PM", event: "" },
+  { time: "5 PM", event: "" },
+];
 
 
+//create rows
+schedule.forEach(function(timeBlock, index) {
+	var timeLabel = timeBlock.time;
+	var blockColor = timeColor(timeLabel);
+	var row =
+		'<div class="timeblock" id="' + index + '"><div class="row no-gutters input-group"><div class="col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">' +timeLabel +
+		'</div><textarea class="form-control ' + blockColor + '">' + timeBlock.event + '</textarea><div class="col-sm col-lg-1 input-group-append">' + 
+        '<button class="saveBtn btn-block" type="submit"><span class="icon oi oi-pin "></span> Save </button></div></div></div>';
 
-    // auto focus new element
-    textInput.trigger("focus");
-
+	//add rows to container
+	$(".container").append(row);
 });
 
-
-
-
-//load schedule
-var loadSchedule = function(){
-    schedule = JSON.parse(localStorage.getItem("schedule"));
-    if (!schedule){
-        schedule = {
-            nine: [],
-            ten: [],
-            eleven: [],
-            twelve: [],
-            thirteen: [],
-            fourteen: [],
-            fifteen: [],
-            sixteen: [],
-            seventeen: []
-        };
-        saveTasks()
-    }
-    
-    $.each(schedule, function(list, arr) {
-        console.log(list, arr);
-        arr.forEach(function(schedule) {
-            createTask(schedule.text, schedule.date, list);
-        });
-    });
-    
+//colors based on the scheduling time
+function timeColor(time) {
+	var timeNow =  moment(now, "H A");
+	var workHour = moment(time, "H A");
+	if (timeNow.isBefore(workHour) === true) {
+		return "future";
+	} else if (timeNow.isAfter(workHour) === true) {
+		return "past";
+	} else {
+		return "present";
+	}
 }
 
-console.log(schedule);
-
-var saveTasks = function() {
-    localStorage.setItem("schedule", JSON.stringify(schedule));
-};
-
-  
-
-loadSchedule();

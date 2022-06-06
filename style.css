@@ -25,7 +25,7 @@ textarea{
   white-space: pre-wrap;
 }
 
-.time-block{
+.timeblock{
   text-align: center;
   border-radius: 15px;
 }
@@ -70,9 +70,8 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-#currentDay{
-  font-size: 100px;
-}
+
+/* 
 
 .time-task {
   border-top: 2px dashed gray;
@@ -100,3 +99,16 @@ textarea{
   margin: 2px;
   background-color: transparent;
 }
+
+.past-time-task{
+  background: gray;
+}
+
+.present-time-task{
+  background-color: rgb(203, 112, 127);
+
+}
+
+.future-time-task{
+  background-color: #06AED5;
+} */

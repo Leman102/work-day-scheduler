@@ -13,87 +13,29 @@
   </head>
 
   <body>
-    <header class="jumbotron sticky-top bg-white">
+    <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead calendar-display "></p>
+      <p id="currentDay" class="lead"></p>
     </header>
+    <div class="container mb-3">
+      <!-- Timeblocks go here -->
 
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="row w-100 text-center">
-        <div id="time-task-nine" class="time-task col-2 bg-secondary bg-white d-flex justify-content-center align-items-center">9AM</div>
-        <div  class="task-edit col-8 bg-primary d-flex justify-content-start p-2">
-          <input class="task-edit-input col-12 d-flex justify-content-start p-2 my-2" type="text" maxlength="80" />
+      <!-- <div class="timeblock" id="'index-number-here '">
+        <div class="row no-gutters input-group">
+          <div class="col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">Time
+          </div>
+          <textarea class="form-control ' + blockColor + '">Text</textarea>
+          <div class="col-sm col-lg-1 input-group-append">
+            <button class="saveBtn btn-block" type="submit">
+              <span  class="icon oi oi-pin"></span> 
+              Save 
+            </button>
+          </div>
         </div>
-        <button type="button" class="btn task-save col-2 rounded-right d-flex justify-content-center align-items-center"><span class="save-icon oi oi-lock-locked "></span> Save</button>
-      </div>
+      </div> -->
+
     </div>
-
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="row w-100 text-center">
-        <div id="time-task-ten" class="time-task col-2 bg-secondary bg-white d-flex justify-content-center align-items-center">10AM</div>
-        <input class="task-edit col-8 bg-primary d-flex justify-content-start p-2" type="text"  />
-        <button type="button" class="btn task-save col-2 rounded-right d-flex justify-content-center align-items-center"><span class="save-icon oi oi-lock-locked "></span> Save</button>
-      </div>
-    </div>
-
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="row w-100 text-center">
-        <div id="time-task-eleven" class="time-task col-2 bg-secondary bg-white d-flex justify-content-center align-items-center">11AM</div>
-        <input class="task-edit col-8 bg-primary d-flex justify-content-start p-2" type="text" />
-        <button type="button" class="btn task-save col-2 rounded-right d-flex justify-content-center align-items-center"><span class="save-icon oi oi-lock-locked "></span> Save</button>
-      </div>
-    </div>
-
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="row w-100 text-center">
-        <div id="time-task-twelve" class="time-task col-2 bg-secondary bg-white d-flex justify-content-center align-items-center">12PM</div>
-        <input class="task-edit col-8 bg-primary d-flex justify-content-start p-2" type="text"  />
-        <button type="button" class="btn task-save col-2 rounded-right d-flex justify-content-center align-items-center"><span class="save-icon oi oi-lock-locked "></span> Save</button>
-      </div>
-    </div>
-
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="row w-100 text-center">
-        <div id="time-task-thirteen" class="time-task col-2 bg-secondary bg-white d-flex justify-content-center align-items-center">13PM</div>
-        <input class="task-edit col-8 bg-primary d-flex justify-content-start p-2" type="text"  />
-        <button type="button" class="btn task-save col-2 rounded-right d-flex justify-content-center align-items-center"><span class="save-icon oi oi-lock-locked "></span> Save</button>
-      </div>
-    </div>
-
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="row w-100 text-center">
-        <div id="time-task-fourteen" class="time-task col-2 bg-secondary bg-white d-flex justify-content-center align-items-center">14PM</div>
-        <input class="task-edit col-8 bg-primary d-flex justify-content-start p-2" type="text" />
-        <button type="button" class="btn task-save col-2 rounded-right d-flex justify-content-center align-items-center"><span class="save-icon oi oi-lock-locked "></span> Save</button>
-      </div>
-    </div>
-
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="row w-100 text-center">
-        <div id="time-task-fifteen" class="time-task col-2 bg-secondary bg-white d-flex justify-content-center align-items-center">15PM</div>
-        <input class="task-edit col-8 bg-primary d-flex justify-content-start p-2" type="text" />
-        <button type="button" class="btn task-save col-2 rounded-right d-flex justify-content-center align-items-center"><span class="save-icon oi oi-lock-locked "></span> Save</button>
-      </div>
-    </div>
-
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="row w-100 text-center">
-        <div id="time-task-sixteen" class="time-task col-2 bg-secondary bg-white d-flex justify-content-center align-items-center">16PM</div>
-        <input class="task-edit col-8 bg-primary d-flex justify-content-start p-2" type="text"  />
-        <button type="button" class="btn task-save col-2 rounded-right d-flex justify-content-center align-items-center"><span class="save-icon oi oi-lock-locked "></span> Save</button>
-      </div>
-    </div>
-
-    <div class="container d-flex justify-content-center align-items-center mb-3">
-      <div class="row w-100 text-center">
-        <div id="time-task-seventeen" class="time-task col-2 bg-secondary bg-white d-flex justify-content-center align-items-center">17PM</div>
-        <input class="task-edit col-8 bg-primary d-flex justify-content-start p-2" type="text" />
-        <button type="button" class="btn task-save col-2 rounded-right d-flex justify-content-center align-items-center"><span class="save-icon oi oi-lock-locked "></span> Save</button>
-      </div>
-    </div>
-
-
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
