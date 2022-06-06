@@ -69,3 +69,34 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+#currentDay{
+  font-size: 100px;
+}
+
+.time-task {
+  border-top: 2px dashed gray;
+  border-right: 3px solid #196b80;
+  font-weight: bolder;
+  
+}
+
+.task-save {
+  background-color: rgb(4, 207, 207);
+  color: white;
+  border-left: 3px solid #196b80;
+}
+
+.save-icon {
+  font-weight: bolder;
+}
+
+.task-edit {
+  border-left: 3px solid #196b80;
+  border-right: 3px solid #196b80;
+}
+.task-edit-input{
+  border: transparent;
+  margin: 2px;
+  background-color: transparent;
+}
